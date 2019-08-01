@@ -20,7 +20,7 @@
             <div
               class="text-xs font-weight-bold text-primary text-uppercase mb-1"
             >
-              Earnings (Monthly)
+              <a [routerLink]="['/tables']" [queryParams]="{ num: 15 }" >Earnings (Monthly)</a>
             </div>
             <div class="h5 mb-0 font-weight-bold text-gray-800">
               $40,000
@@ -42,6 +42,7 @@
           <div class="col mr-2">
             <div
               class="text-xs font-weight-bold text-success text-uppercase mb-1"
+              (click)="toTables()"
             >
               Earnings (Annual)
             </div>
