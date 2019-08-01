@@ -18,6 +18,11 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
+        path: 'components',
+        loadChildren: () => import('./components/components.module').then(m => m.ComponentsModule)
+        // loadChildren: './components/components.module#ComponentsModule'
+      },
+      {
         path: '',
         component: DashboardComponent
       },

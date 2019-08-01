@@ -16,6 +16,7 @@ import { ColorsComponent } from './utilities/colors/colors.component';
 import { OtherComponent } from './utilities/other/other.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { ComponentsModule } from './components/components.module';
 
 
 @NgModule({
