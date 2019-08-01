@@ -50,6 +50,10 @@ const routes: Routes = [
             component: ColorsComponent
           },
           {
+            path: 'colors/:type',
+            component: ColorsComponent
+          },
+          {
             path: 'borders',
             component: BordersComponent
           },

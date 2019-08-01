@@ -15,6 +15,9 @@ import { BordersComponent } from './utilities/borders/borders.component';
 import { ColorsComponent } from './utilities/colors/colors.component';
 import { OtherComponent } from './utilities/other/other.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +35,8 @@ import { OtherComponent } from './utilities/other/other.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
