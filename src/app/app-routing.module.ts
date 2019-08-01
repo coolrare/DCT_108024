@@ -4,6 +4,9 @@ import { Page1Component } from './page1/page1.component';
 import { Page2Component } from './page2/page2.component';
 import { LayoutComponent } from './layout/layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { ChartsComponent } from './charts/charts.component';
+import { TablesComponent } from './tables/tables.component';
 
 const routes: Routes = [
   {
@@ -21,8 +24,20 @@ const routes: Routes = [
       {
         path: 'page2',
         component: Page2Component
+      },
+      {
+        path: 'charts',
+        component: ChartsComponent
+      },
+      {
+        path: 'tables',
+        component: TablesComponent
       }
     ]
+  },
+  {
+    path: '**',
+    component: NotFoundComponent
   }
 ];
 
