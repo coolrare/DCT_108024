@@ -11,11 +11,14 @@ import { AnimationsComponent } from './utilities/animations/animations.component
 import { ColorsComponent } from './utilities/colors/colors.component';
 import { BordersComponent } from './utilities/borders/borders.component';
 import { OtherComponent } from './utilities/other/other.component';
+import { AuthGuard } from './auth.guard';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'components',
@@ -48,7 +51,7 @@ const routes: Routes = [
           {
             path: '',
             redirectTo: 'other',
-            pathMatch: 'full',
+            pathMatch: 'full'
           },
           {
             path: 'colors',
@@ -73,6 +76,10 @@ const routes: Routes = [
         ]
       }
     ]
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: '**',

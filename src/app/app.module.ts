@@ -17,6 +17,7 @@ import { OtherComponent } from './utilities/other/other.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentsModule } from './components/components.module';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { ComponentsModule } from './components/components.module';
     AnimationsComponent,
     BordersComponent,
     ColorsComponent,
-    OtherComponent
+    OtherComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
