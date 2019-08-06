@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -10,8 +11,7 @@ export class LoginComponent implements OnInit {
 
   data: any = {
     username: 'doggy.huang@gmail.com',
-    password: '',
-    rememberMe: true
+    password: ''
   };
 
   constructor(private router: Router) { }
@@ -20,8 +20,13 @@ export class LoginComponent implements OnInit {
     document.body.className = 'bg-gradient-primary';
   }
 
-  login() {
-    console.log('執行登入', this.data);
+  login(form: NgForm) {
+
+    console.log(form.submitted);
+
+    if (form.valid) {
+      console.log('執行登入', this.data);
+    }
 
     // 登入動作...
     // localStorage.setItem('apiKey', '1111');
