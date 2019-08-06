@@ -26,7 +26,19 @@ form.untouched = {{form.untouched}}
 form.valid = {{form.valid}}
 form.invalid = {{form.invalid}}
 form.enabled = {{form.enabled}}</pre>
+<pre>gLogin.value = {{gLogin.value|json}}
+gLogin.errors = {{gLogin.errors|json}}
+gLogin.pristine = {{gLogin.pristine}}
+gLogin.dirty = {{gLogin.dirty}}
+gLogin.touched = {{gLogin.touched}}
+gLogin.untouched = {{gLogin.untouched}}
+gLogin.valid = {{gLogin.valid}}
+gLogin.invalid = {{gLogin.invalid}}
+gLogin.enabled = {{gLogin.enabled}}</pre>
                 <form class="user" #form="ngForm" (ngSubmit)="login(form)">
+
+                <div ngModelGroup="login" #gLogin="ngModelGroup">
+
                   <div class="form-group">
                     <input type="email" class="form-control form-control-user" id="exampleInputEmail"
                       aria-describedby="emailHelp" placeholder="Enter Email Address..."
@@ -43,6 +55,9 @@ form.enabled = {{form.enabled}}</pre>
                       #mPassword="ngModel">
                     <span class="ng-invalid" *ngIf="mPassword.touched && mPassword.invalid && mPassword['errors']?.required">請輸入您的密碼</span>
                   </div>
+
+                </div>
+
                   <div class="form-group">
                     <div class="custom-control custom-checkbox small">
                       <input type="checkbox" class="custom-control-input" id="customCheck"
