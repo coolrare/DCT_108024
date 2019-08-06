@@ -16,10 +16,10 @@ export class RegisterComponent implements OnInit {
     document.body.className = 'bg-gradient-primary';
 
     this.form = this.fb.group({
-      firstName: ['',
+      firstName: ['Will',
           [Validators.required]
       ],
-      lastName: ['',
+      lastName: ['Huang',
           [Validators.required]
       ],
       email: ['',
@@ -34,7 +34,7 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  doRegister(form: NgForm) {
+  doRegister() {
     if (this.form.valid) {
       console.log('送出表單', this.form.value);
     }

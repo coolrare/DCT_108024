@@ -9,29 +9,38 @@
             <div class="text-center">
               <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
             </div>
-            <form class="user" (ngSubmit)="doRegister(form)" #form="ngForm">
+<pre>form.value = {{form.value|json}}
+form.errors = {{form.errors|json}}
+form.pristine = {{form.pristine}}
+form.dirty = {{form.dirty}}
+form.touched = {{form.touched}}
+form.untouched = {{form.untouched}}
+form.valid = {{form.valid}}
+form.invalid = {{form.invalid}}
+form.enabled = {{form.enabled}}</pre>
+            <form [formGroup]="form" class="user" (ngSubmit)="doRegister()">
               <div class="form-group row">
                 <div class="col-sm-6 mb-3 mb-sm-0">
                   <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                         placeholder="First Name">
+                         placeholder="First Name" formControlName="firstName">
                 </div>
                 <div class="col-sm-6">
                   <input type="text" class="form-control form-control-user" id="exampleLastName"
-                         placeholder="Last Name">
+                         placeholder="Last Name" formControlName="lastName">
                 </div>
               </div>
               <div class="form-group">
                 <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                       placeholder="Email Address">
+                       placeholder="Email Address" formControlName="email">
               </div>
               <div class="form-group row">
                 <div class="col-sm-6 mb-3 mb-sm-0">
                   <input type="password" class="form-control form-control-user" id="exampleInputPassword"
-                         placeholder="Password">
+                         placeholder="Password" formControlName="pw">
                 </div>
                 <div class="col-sm-6">
                   <input type="password" class="form-control form-control-user" id="exampleRepeatPassword"
-                         placeholder="Repeat Password">
+                         placeholder="Repeat Password" formControlName="pw2">
                 </div>
               </div>
               <a href="login.html" class="btn btn-primary btn-user btn-block"> Register Account </a>
