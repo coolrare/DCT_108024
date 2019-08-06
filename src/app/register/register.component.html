@@ -18,7 +18,7 @@ form.untouched = {{form.untouched}}
 form.valid = {{form.valid}}
 form.invalid = {{form.invalid}}
 form.enabled = {{form.enabled}}</pre>
-            <form [formGroup]="form" class="user" (ngSubmit)="doRegister()">
+            <form [formGroup]="form" class="user" (ngSubmit)="doRegister()" #f="ngForm" [class.submitted]="f.submitted">
               <div class="form-group row">
                 <div class="col-sm-6 mb-3 mb-sm-0">
                   <input type="text" class="form-control form-control-user" id="exampleFirstName"
@@ -43,7 +43,7 @@ form.enabled = {{form.enabled}}</pre>
                          placeholder="Repeat Password" formControlName="pw2">
                 </div>
               </div>
-              <a href="login.html" class="btn btn-primary btn-user btn-block"> Register Account </a>
+              <button class="btn btn-primary btn-user btn-block"> Register Account </button>
               <hr>
               <a href="index.html" class="btn btn-google btn-user btn-block">
                 <i class="fab fa-google fa-fw"></i> Register with Google </a>
