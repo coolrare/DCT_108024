@@ -8,6 +8,12 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  data: any = {
+    username: '',
+    password: '',
+    rememberMe: true
+  };
+
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -15,8 +21,10 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    console.log('執行登入', this.data);
+
     // 登入動作...
-    localStorage.setItem('apiKey', '1111');
-    this.router.navigate(['/']);
+    // localStorage.setItem('apiKey', '1111');
+    // this.router.navigate(['/']);
   }
 }
