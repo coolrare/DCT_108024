@@ -33,7 +33,7 @@ form.enabled = {{form.enabled}}</pre>
                       [(ngModel)]="data.username" name="username"
                       required email
                       #mUsername="ngModel">
-                    <span class="ng-invalid" *ngIf="mUsername.invalid && mUsername['errors']?.required">請輸入您的帳號</span>
+                    <span class="ng-invalid" *ngIf="form.submitted && mUsername.invalid && mUsername['errors']?.required">請輸入您的帳號</span>
                   </div>
                   <div class="form-group">
                     <input type="password" class="form-control form-control-user" id="exampleInputPassword"
@@ -41,7 +41,7 @@ form.enabled = {{form.enabled}}</pre>
                       [(ngModel)]="data.password" name="password"
                       required minlength="3" maxlength="15" pattern="^(?=.*[a-z])(?=.*\d).{5,}$"
                       #mPassword="ngModel">
-                    <span class="ng-invalid" *ngIf="mPassword.invalid && mPassword['errors']?.required">請輸入您的密碼</span>
+                    <span class="ng-invalid" *ngIf="mPassword.touched && mPassword.invalid && mPassword['errors']?.required">請輸入您的密碼</span>
                   </div>
                   <div class="form-group">
                     <div class="custom-control custom-checkbox small">

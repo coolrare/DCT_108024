@@ -10,7 +10,7 @@ import { NgForm } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   data: any = {
-    username: 'doggy.huang@gmail.com',
+    username: '',
     password: ''
   };
 
