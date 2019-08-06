@@ -23,6 +23,7 @@
                       [(ngModel)]="data.username" name="username"
                       required email
                       #mUsername="ngModel">
+                    <span class="ng-invalid" *ngIf="mUsername.invalid && mUsername['errors'].required">請輸入您的帳號</span>
                     <pre>mUsername.value = {{mUsername.value}}
 mUsername.errors = {{mUsername.errors|json}}
 mUsername.pristine = {{mUsername.pristine}}
@@ -39,6 +40,7 @@ mUsername.enabled = {{mUsername.enabled}}</pre>
                       [(ngModel)]="data.password" name="password"
                       required minlength="3" maxlength="15" pattern="^(?=.*[a-z])(?=.*\d).{5,}$"
                       #mPassword="ngModel">
+                      <span class="ng-invalid" *ngIf="mPassword.invalid && mPassword['errors'].required">請輸入您的帳號</span>
                       <pre>mPassword.value = {{mPassword.value}}
 mPassword.errors = {{mPassword.errors|json}}
 mPassword.pristine = {{mPassword.pristine}}
