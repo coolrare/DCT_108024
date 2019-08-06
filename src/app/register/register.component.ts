@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, NgForm, FormArray } from '@angular/forms';
+import { noWillValidator } from '../shared/noWillValidator';
 
 @Component({
   selector: 'app-register',
@@ -28,7 +29,7 @@ export class RegisterComponent implements OnInit {
 
     this.form = this.fb.group({
       firstName: ['',
-        [Validators.required]
+        [Validators.required, noWillValidator]
       ],
       lastName: ['',
         [Validators.required]
