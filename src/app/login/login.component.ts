@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   data: any = {
-    username: '',
+    username: 'doggy.huang@gmail.com',
     password: '',
     rememberMe: true
   };
