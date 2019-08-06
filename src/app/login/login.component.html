@@ -20,12 +20,30 @@
                   <div class="form-group">
                     <input type="email" class="form-control form-control-user" id="exampleInputEmail"
                       aria-describedby="emailHelp" placeholder="Enter Email Address..."
-                      [(ngModel)]="data.username" name="username">
+                      [(ngModel)]="data.username" name="username"
+                      required email
+                      #mUsername="ngModel">
+                    <pre>mUsername.value = {{mUsername.value}}
+mUsername.errors = {{mUsername.errors|json}}
+mUsername.pristine = {{mUsername.pristine}}
+mUsername.dirty = {{mUsername.dirty}}
+mUsername.touched = {{mUsername.touched}}
+mUsername.untouched = {{mUsername.untouched}}
+mUsername.enabled = {{mUsername.enabled}}</pre>
                   </div>
                   <div class="form-group">
                     <input type="password" class="form-control form-control-user" id="exampleInputPassword"
                       placeholder="Password"
-                      [(ngModel)]="data.password" name="password">
+                      [(ngModel)]="data.password" name="password"
+                      required minlength="3" maxlength="15" pattern="^(?=.*[a-z])(?=.*\d).{5,}$"
+                      #mPassword="ngModel">
+                      <pre>mPassword.value = {{mPassword.value}}
+mPassword.errors = {{mPassword.errors|json}}
+mPassword.pristine = {{mPassword.pristine}}
+mPassword.dirty = {{mPassword.dirty}}
+mPassword.touched = {{mPassword.touched}}
+mPassword.untouched = {{mPassword.untouched}}
+mPassword.enabled = {{mPassword.enabled}}</pre>
                   </div>
                   <div class="form-group">
                     <div class="custom-control custom-checkbox small">
