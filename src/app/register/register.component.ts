@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, NgForm, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -22,9 +22,10 @@ export class RegisterComponent implements OnInit {
       lastName: ['Huang',
           [Validators.required]
       ],
-      email: ['',
-          [Validators.required, Validators.email]
-      ],
+      emails: this.fb.array([
+        this.fb.control('', [Validators.required, Validators.email]),
+        this.fb.control('', [Validators.required, Validators.email])
+      ]),
       pw: ['',
           [Validators.required, Validators.minLength(3)]
       ],
@@ -32,6 +33,11 @@ export class RegisterComponent implements OnInit {
           [Validators.required, Validators.minLength(3)]
       ]
     });
+  }
+
+  addEmail() {
+    const emails = this.form.get('emails') as FormArray;
+    emails.push(this.fb.control('', [Validators.required, Validators.email]));
   }
 
   doRegister() {
